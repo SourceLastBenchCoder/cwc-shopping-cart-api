@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser'
 import authRoot from './routes/auth.js'
 import usersRoot from './routes/users.js'
 import applicationRoot from './routes/application.js'
+import categoryRoot from './routes/category.js'
 
 dotenv.config()
 
@@ -38,6 +39,7 @@ app.use(cookieParser())
 app.use("/api/auth", authRoot)
 app.use("/api/users", usersRoot)
 app.use("/api/application", applicationRoot)
+app.use("/api/category", categoryRoot)
 
 app.use((err, req, res, next) => {
     const errorStatus = err.status || 500

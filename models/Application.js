@@ -6,13 +6,21 @@ const AppliCationSchema = new mongoose.Schema({
         required: true
     },
     logo: {
-        type: String,
-        required: true
+        type: String
+    },
+    favicon: {
+        type: String
+    },
+    metaTag: {
+        type: String
+    },
+    metaDescription: {
+        type: String
     },
     isActive: {
         type: Boolean,
         required: true
     }
-})
+}, { timeseries: true })
 
 export default mongoose.model("Application", AppliCationSchema)
