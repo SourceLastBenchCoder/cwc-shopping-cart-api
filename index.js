@@ -6,6 +6,7 @@ import authRoot from './routes/auth.js'
 import usersRoot from './routes/users.js'
 import applicationRoot from './routes/application.js'
 import categoryRoot from './routes/category.js'
+import cors  from 'cors'
 
 dotenv.config()
 
@@ -32,6 +33,7 @@ app.get("/", (req, res) => {
     res.json({ AppName: "CWC Hotel Manager", ApiStatus: "API Running successfully" })
 })
 
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
